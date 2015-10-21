@@ -1,0 +1,1 @@
+!function(i){function n(i,n,t){c()}function c(){$(".noticias-destacados div.social").hide(),t()}function t(){$(".bt-despliegue-social").each(function(){$(this).click(function(i){i.preventDefault(),$(this).parent().prev(".social").show()})})}i.Desaldia=n}(window);
