@@ -11,7 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/aenor.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.sidr.light.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,69 +20,78 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="js/timeline.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/timeline.css">
+    <script type="text/javascript" src="js/gsapi.js"></script>
 
 
-    <script type="text/javascript">
-        
-        var timeline;
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sidr.min.js"></script>
 
-        google.load("visualization", "1");
 
-        // Set callback to run when API is loaded
-        google.setOnLoadCallback(drawVisualization);
+    <!-- vendor -->
 
-        // Called when the Visualization API is loaded.
-        function drawVisualization() {
-            // Create and populate a data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('datetime', 'start');
-            data.addColumn('datetime', 'end');
-            data.addColumn('string', 'content');
 
-            data.addRows([
-                [new Date(2010,7,23), , 'Conversation<br>' +
-                        '<img src="img/comments-icon.png" style="width:32px; height:32px;">'],
-                [new Date(2010,7,23,23,0,0), , 'Mail from boss<br>' +
-                        '<img src="img/mail-icon.png" style="width:32px; height:32px;">'],
-                [new Date(2010,7,24,16,0,0), , 'Report'],
-                [new Date(2010,7,26), new Date(2010,8,2), 'Traject A'],
-                [new Date(2010,7,28), , 'Memo<br>' +
-                        '<img src="img/notes-edit-icon.png" style="width:48px; height:48px;">'],
-                [new Date(2010,7,29), , 'Phone call<br>' +
-                        '<img src="img/Hardware-Mobile-Phone-icon.png" style="width:32px; height:32px;">'],
-                [new Date(2010,7,31), new Date(2010,8,3), 'Traject B'],
-                [new Date(2010,8,4,12,0,0), , 'Report<br>' +
-                        '<img src="img/attachment-icon.png" style="width:32px; height:32px;">']
-            ]);
 
-            // specify options
-            var options = {
-                "width":  "100%",
-                "height": "200px",
-                "style": "box"
-            };
 
-            // Instantiate our timeline object.
-            timeline = new links.Timeline(document.getElementById('mytimeline'), options);
 
-            // Draw our timeline with the created data and options
-            timeline.draw(data);
-        }
+    <script>
+      var _SUBMENUS;
+      
+      $(document).ready(function() 
+      {
+                // submenus desplegables no responsive.
+                _SUBMENUS = new Submenus();
+
+                // menus responsive
+                $('#simple-menu').sidr();
+
+
+
+
+                //iniciamos acordeones
+
+
+                $('.container-text-interiores').toggleClass('invisible');
+                $('.desplegar-bt').each(function(){
+
+                    $(this).click(function(event){
+                      event.preventDefault();
+                      $(this).parent().parent().toggleClass('active');
+                      $(this).parent().parent().next('div').toggleClass('invisible');
+
+                    });
+                });
+
+
+                // end acordeones
+      });
     </script>
+
+
+
+
 
 
   </head>
   <body>
-    
 
+
+
+        <!--
+        *******************************************
+        ********** HEADER *************************
+        ******************************************* 
+        -->
+    
+<header>
   <section class="header">
     <div class="container">
         <header>
             <div class="row">
-                  <div class="col-md-4"><a href="home"><img src="img/logo-header-aenor.gif" alt="LOGO AENOR"></a></div>
+                  <div class="col-md-4 col-xs-12 logo-cabecera-aenor"><a href="home"><img src="img/logo-aenor-header.png" alt="LOGO AENOR"></a></div>
                   <div class="col-md-8 nav-top-container">
                       
                       <nav class="nav-top" >
@@ -90,28 +99,32 @@
                           <li  class="anchor"><a href="">Bienvenidos</a></li>
                           <li  class="anchor"><a href="">Welcome</a></li>
                           <li><input type="text" placeholder="Buscar" class="buscar"></li>
-                          <li><button>Área Clientes</button></li>
                           <li><button>Contacto</button></li>
                           <li><a href=""><img src="img/aenor-mundo-bt.jpg"></a></li>
                         </ul>
                       </nav>
-
-
-                      
-
-
-
-
                   </div>
             </div>
         </header>
     </div>
-  </section>
+</section>
+</header>
+
+
+        <!--
+        *******************************************
+        ********** HEADER *************************
+        ******************************************* 
+        -->
 
 
 
 
-
+        <!--
+        *******************************************
+        **** MENU DISPOSITIVOS MOVILES ************
+        ******************************************* 
+        -->
 
   <section class="main-menu main-menu-responsive">
     <div class="container-fluid fondo-main-menu">
@@ -124,24 +137,61 @@
                 <div class="col-md-12" id="sidr">
                           <nav class="">
                                 <ul>
+                                    <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+                                     <li><a href="">Bienvenidos</a></li>
+                                     <li><a href="">Welcome</a></li>
+                                     <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
+                                     <li><a href="">Contacto</a></li>
+                                     <li><a href=""><i class="fa fa-globe"></i> Aenor en el Mundo</a></li>
                                     <li><a href="">Normalización</a></li>
-                                    <li><a href="#">Tienda</a></li>
-                                    <li><a href="">Servicios</a></li>
+                                    <li><a href="">Servicios</a>
+                                      
+
+                                                <ul>
+                                                  <li><a href=""> · Certificación de Calidad</a></li>
+                                                  <li><a href=""> · Sistemas de gestion ISO 9001</a></li>
+                                                  <li><a href=""> · Modelos de Excelencia</a></li>
+                                                  <li><a href=""> · Calidad de Producto</a></li>
+                                                  <li><a href=""> · Calidad de Servicio</a></li>
+                                                </ul>
+
+
+                                    </li>
                                     <li><a href="">Sectores</a></li>
                                     <li><a href="">Acerca de Aenor</a></li>
+                                    <li><a href=""><i class="fa fa-shopping-cart"></i> Tienda</a></li>
                                   
                                 </ul>
                           </nav>
                 </div>
-
-
-
-
-
            </div>
     </div>
   </section>
 
+
+        <!--
+        *******************************************
+        **** MENU DISPOSITIVOS MOVILES ************
+        ******************************************* 
+        -->
+
+
+        <!--
+        *******************************************
+        ************ MENU GENERAL *****************
+        ******************************************* 
+        -->
+
+
+
+
+  <script src="js/aenor/submenus.js"></script>
+
+  <!-- 
+        WARNING:::::
+        JS de incialización en el top:
+         _SUBMENUS = new Submenus();
+  -->
 
 
   <section class="main-menu main-menu-desktop">
@@ -181,10 +231,8 @@
                 </div>
 
 
-                <!-- submenus -->
-                <!-- DEPENDENCIA:
-                      submenu.js
-                -->
+                
+                
                 <div class="submenus-container">
 
 
@@ -302,9 +350,7 @@
 
 
 
-                        
-
-
+                
                 </div><!-- end submenus -->
 
 
@@ -312,6 +358,15 @@
            </div>
     </div>
   </section>
+
+
+
+
+        <!--
+        *******************************************
+        ************ MENU GENERAL *****************
+        ******************************************* 
+        -->
 
 
 <!-- MENU SOLO PARA LA TIENDA -->
@@ -344,21 +399,18 @@
 
 
 
+        <!--
+        *******************************************
+        ************ SOLUTUION FINDER *************
+        ******************************************* 
+        -->
 
 
   <section class="home-slider-solution-finder">
-            
             <div class="container-fluid fondo-main-solution-finder">
-                        
-                    
                     <div class="container slider-top-bg">
-                        
-
-
                     <div class="row solution-back">
                         <div class="row form-container">
-
-
                            <!-- end solution finder -->
                           <form class="form-inline form-solution-finder">
                             <div class="form-group">
@@ -384,28 +436,51 @@
                             </div>
                             <button type="submit" class="btn btn-default bt-buscar-solution-finder"></button>
                           </form>
-
                           <!-- end solution finder -->
-
-
-
                         </div>
-
                     </div>
-
-
-                        <!-- slider -->
-
-
-                        <div class="row">
-                          
-                              <img src="img/cabecera-sector-energia.jpg" alt="Sector Energía" class="cabeceras-secciones-interiores">
-                        </div>
-
             </div>    
   </section>
 
 
+
+
+        <!--
+        *******************************************
+        ************ SOLUTUION FINDER *************
+        ******************************************* 
+        -->
+
+
+        <!--
+        *******************************************
+        ************ CABECERA INTERIOR *************
+        ******************************************* 
+        -->
+
+
+<div class="container-fluid cabeceras-secciones-interiores">
+            <div class="container contenedor-img-cabecera">
+                    
+                    <h2><span>Sector</span><br>Energía</h2>
+
+
+                    <img src="img/cabecera-sector-energia.jpg" alt="Sector Energía" class="cabeceras-secciones-interiores">
+            </div>
+</div>
+
+        <!--
+        *******************************************
+        ************ CABECERA INTERIOR *************
+        ******************************************* 
+        -->
+
+
+        <!--
+        *******************************************
+        ************ MIGAS NAVEGACION *************
+        ******************************************* 
+        -->
 
 <section class="bread-crumbs">
           <div class="container-fluid">
@@ -427,6 +502,12 @@
 </section>
 
 
+
+        <!--
+        *******************************************
+        ************ MIGAS NAVEGACION *************
+        ******************************************* 
+        -->
 
 
 
@@ -452,20 +533,39 @@
 
 
                                         <div class="row container-text-interiores">
-                                            <h2>La eficiencia como valor principal</h2>
-                                            <h3>Triple ahorro de costes: Energéticos, ambientales y económicos</h3>
-                                            <p>
-                                              El Sistema de Gestión Energética es la parte del sistema de gestión de una organización dedicada a desarrollar e implantar su política energética, así como a gestionar aquellos elementos de sus actividades, productos o servicios que interactúan con el uso de la energía (aspectos energéticos).
-                                              <br><br>
-                                              La norma <strong>UNE-EN ISO 50001</strong> establece los requisitos que debe poseer un Sistema de Gestión Energética, con el fin de realizar mejoras continuas y sistemáticas del rendimiento energético de las organizaciones.
-                                              <br><br>
-                                              La certificación de un sistema de gestión energética asegura por tercera parte el control y seguimiento sistemático de los aspectos energéticos y la mejora continua del desempeño energético. Ello contribuye a un uso de la energía más eficiente y más sostenible, otorgando confianza en el sistema de gestión.
-                                            </p>
+
+
+                                                <div class="row">
+
+                                                <h2>Normas del Sector</h2>
+                                                <h3>Triple ahorro de costes: Energéticos, ambientales y económicos</h3>
+                                                <p>
+                                                  El Sistema de Gestión Energética es la parte del sistema de gestión de una organización dedicada a desarrollar e implantar su política energética, así como a gestionar aquellos elementos de sus actividades, productos o servicios que interactúan con el uso de la energía (aspectos energéticos).
+                                                  <br><br>
+                                                  La norma <strong>UNE-EN ISO 50001</strong> establece los requisitos que debe poseer un Sistema de Gestión Energética, con el fin de realizar mejoras continuas y sistemáticas del rendimiento energético de las organizaciones.
+                                                  <br><br>
+                                                  La certificación de un sistema de gestión energética asegura por tercera parte el control y seguimiento sistemático de los aspectos energéticos y la mejora continua del desempeño energético. Ello contribuye a un uso de la energía más eficiente y más sostenible, otorgando confianza en el sistema de gestión.
+                                                </p>
+                                              
+
+                                            </div>
+
+                                            <div class="row">
+                                                    
+
+                                                    <ul class="utilities">
+                                                      <li><a href=""><i class="fa fa-file-pdf-o fa-2"></i> Imprimir</a></li>
+                                                      <li><a href=""><i class="fa fa-print fa-2"></i> Descargar PDF</a></li>
+                                                    </ul>
+
+
+                                            </div>
+
+
+
                                         </div>
 
-                                        
 
-                                        <br><br>
 
 
                                         <div class="row acordeon-header">
@@ -481,15 +581,82 @@
 
 
                                         <div class="row container-text-interiores">
-                                            <h2>Normas del Sector</h2>
-                                            <h3>Triple ahorro de costes: Energéticos, ambientales y económicos</h3>
-                                            <p>
-                                              El Sistema de Gestión Energética es la parte del sistema de gestión de una organización dedicada a desarrollar e implantar su política energética, así como a gestionar aquellos elementos de sus actividades, productos o servicios que interactúan con el uso de la energía (aspectos energéticos).
-                                              <br><br>
-                                              La norma <strong>UNE-EN ISO 50001</strong> establece los requisitos que debe poseer un Sistema de Gestión Energética, con el fin de realizar mejoras continuas y sistemáticas del rendimiento energético de las organizaciones.
-                                              <br><br>
-                                              La certificación de un sistema de gestión energética asegura por tercera parte el control y seguimiento sistemático de los aspectos energéticos y la mejora continua del desempeño energético. Ello contribuye a un uso de la energía más eficiente y más sostenible, otorgando confianza en el sistema de gestión.
-                                            </p>
+
+
+                                                <div class="row">
+
+                                                <h2>Normas del Sector</h2>
+                                                <h3>Triple ahorro de costes: Energéticos, ambientales y económicos</h3>
+                                                <p>
+                                                  El Sistema de Gestión Energética es la parte del sistema de gestión de una organización dedicada a desarrollar e implantar su política energética, así como a gestionar aquellos elementos de sus actividades, productos o servicios que interactúan con el uso de la energía (aspectos energéticos).
+                                                  <br><br>
+                                                  La norma <strong>UNE-EN ISO 50001</strong> establece los requisitos que debe poseer un Sistema de Gestión Energética, con el fin de realizar mejoras continuas y sistemáticas del rendimiento energético de las organizaciones.
+                                                  <br><br>
+                                                  La certificación de un sistema de gestión energética asegura por tercera parte el control y seguimiento sistemático de los aspectos energéticos y la mejora continua del desempeño energético. Ello contribuye a un uso de la energía más eficiente y más sostenible, otorgando confianza en el sistema de gestión.
+                                                </p>
+                                              
+
+                                            </div>
+
+
+                                            <div class="row">
+                                              
+                                                    <ul class="utilities">
+                                                      <li><a href=""><i class="fa fa-file-pdf-o fa-2"></i> Imprimir</a></li>
+                                                      <li><a href=""><i class="fa fa-print fa-2"></i> Descargar PDF</a></li>
+                                                    </ul>
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                        <div class="row acordeon-header">
+                                              <div class="col-md-9">
+                                                <h4>Normas del sector</h4>
+                                              </div>
+                                              <div class="col-md-3 desplegar right">
+                                                
+                                                <a href="" class="right desplegar-bt">Desplegar <img src="img/right-doc-interior.png" alt=""></a>
+                                              </div>
+                                        </div>
+
+
+
+                                        <div class="row container-text-interiores">
+
+
+                                                <div class="row">
+
+                                                <h2>Normas del Sector</h2>
+                                                <h3>Triple ahorro de costes: Energéticos, ambientales y económicos</h3>
+                                                <p>
+                                                  El Sistema de Gestión Energética es la parte del sistema de gestión de una organización dedicada a desarrollar e implantar su política energética, así como a gestionar aquellos elementos de sus actividades, productos o servicios que interactúan con el uso de la energía (aspectos energéticos).
+                                                  <br><br>
+                                                  La norma <strong>UNE-EN ISO 50001</strong> establece los requisitos que debe poseer un Sistema de Gestión Energética, con el fin de realizar mejoras continuas y sistemáticas del rendimiento energético de las organizaciones.
+                                                  <br><br>
+                                                  La certificación de un sistema de gestión energética asegura por tercera parte el control y seguimiento sistemático de los aspectos energéticos y la mejora continua del desempeño energético. Ello contribuye a un uso de la energía más eficiente y más sostenible, otorgando confianza en el sistema de gestión.
+                                                </p>
+                                              
+
+                                            </div>
+
+
+                                            <div class="row">
+                                              
+                                                    <ul class="utilities">
+                                                      <li><a href=""><i class="fa fa-file-pdf-o fa-2"></i> Imprimir</a></li>
+                                                      <li><a href=""><i class="fa fa-print fa-2"></i> Descargar PDF</a></li>
+                                                    </ul>
+
+
+                                            </div>
+
+
+
                                         </div>
 
 
@@ -687,126 +854,14 @@
 
 
 
-
-
   <footer>
-        <section class="footer-social">
-
-
-              <div class="container">
-                                  
-
-                  <div class="row">
-                      <h3>Aenor en las redes sociales</h3>
-                      <br>
-                  </div>
-
-              </div>
-
-
-          
-              <div class="container-fluid bg-social-footer">
-                
-
-                                <div class="container">
-                                  
-                                <div class="row">
-
-                                        <div class="col-lg-4">
-                                            
-
-                                              <h4><img src="img/icon-tuiter-footer.gif" alt="Icono tuiter footer"> AENOR @AENOR</h4>
-
-
-<a class="twitter-timeline" href="https://twitter.com/AENOR" data-widget-id="653889708594958336">Tweets por el @AENOR.</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                                          
-
-
-                                        </div>
-
-
-                                        <div class="col-lg-4">
-                                            
-
-                                              <h4><img src="img/icon-tuiter-footer.gif" alt="Icono tuiter footer"> Galería</h4>
-
-
-<a class="twitter-timeline" href="https://twitter.com/AENOR" data-widget-id="653889708594958336">Tweets por el @AENOR.</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                                          
-
-
-                                        </div>
-
-
-                                        <div class="col-lg-4">
-                                            
-
-                                              <h4><img src="img/icon-yt-footer.gif" alt="Icono YouTube footer">Canal AENOR</h4>
-
-
-                                              <div class="widget-youtube">
-                                                
-                                                      
-                                                      <iframe width="100%" src="https://www.youtube.com/embed/Iq9IB1k8Hpg" frameborder="0" allowfullscreen></iframe>
-
-
-                                                  
-                                                      <p class="titulo">Videos Recientes</p>
-                                              
-                                                      <ul>
-                                                        <li>
-                                                          <img src="img/videos-recientes-fake1.jpg" alt="">
-                                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non consectetur eros. Nam ac posuere orci.</p>
-
-                                                        </li>
-                                                        <li>
-                                                          <img src="img/videos-recientes-fake1.jpg" alt="">
-                                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non consectetur eros. Nam ac posuere orci.</p>
-
-                                                        </li>
-                                                      </ul>
-
-
-
-                                              </div>
-
-                                          
-
-
-                                        </div>
-                                  
-
-                                </div>
-
-
-
-
-                                </div>
-              </div>
-        </section> <!-- end footer social -->
-
-
-
         <section class="footer">
-          
                  <div class="container-fluid footer-bg">
-
                         <div class="container">
-
-
                               <div class="row">
-                                
                                      <div class="col-lg-3">
-                                        
                                         <img src="img/network-spain.png" alt="Network Spain Logo">
-
                                      </div>
-
-
-
-
                                      <div class="col-lg-9 right links-info-footer">
                                      
                                          <ul class="links-footer right">   
@@ -820,100 +875,10 @@
 
                                      </div>
                               </div>
-                            
-
                         </div>
-
                   </div>
-
-
-
         </section>
-
-
-
-
   </footer>
-
-  
-
-
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sidr.min.js"></script>
-
-
-    <!-- vendor -->
-    <script src="js/aenor/desaldia.js"></script>
-    <script src="js/aenor/submenus.js"></script>
-
-
-
-<script>
-
-
-  var _DESALDIA,_SUBMENUS;
-  
-  $(document).ready(function() 
-  {
-            // Activate Carousel
-            $("#myCarousel").carousel();
-
-            // Enable Carousel Indicators
-            $(".item").click(function(){
-                $("#myCarousel").carousel(1);
-            });
-
-            // Enable Carousel Controls
-            $(".left").click(function(){
-                $("#myCarousel").carousel("prev");
-            });
-
-
-            $('#simple-menu').sidr();
-            _DESALDIA = new Desaldia();
-            _SUBMENUS = new Submenus();
-
-
-
-
-
-            /*
-                necesario para que funcionen los acordeones
-            */
-
-            $('.container-text-interiores').toggleClass('invisible');
-            $('.desplegar-bt').each(function(){
-
-                $(this).click(function(event){
-                  event.preventDefault();
-                  $(this).parent().parent().toggleClass('active');
-                  $(this).parent().parent().next('div').toggleClass('invisible');
-
-                });
-            });
-
-
-  });
-</script>
-
-
-
-
-<script>
-  
-</script>
-
-
-
 
 
 
