@@ -910,9 +910,20 @@ h3 {
   }
   .home-slider-solution-finder div.form-group {
     width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .home-slider-solution-finder div.form-container {
+    margin: 0;
+    padding: 0;
+  }
+  .home-slider-solution-finder form.form-solution-finder {
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
   .home-slider-solution-finder form.form-solution-finder input.busqueda-solucion {
-    width: 95%;
+    width: 100%;
     margin-top: 15px;
   }
   .home-slider-solution-finder form.form-solution-finder select {
@@ -920,6 +931,9 @@ h3 {
     font-size: 30px;
     font-size: 3rem;
     margin-top: 10px;
+  }
+  .home-slider-solution-finder form.form-solution-finder button {
+    float: right;
   }
   .bg-social-footer iframe {
     margin: 0 auto;
@@ -945,8 +959,67 @@ h3 {
   footer div.right {
     float: left;
   }
-  .columna-utilidades {
-    display: none;
+  .cabeceras-secciones-interiores div {
+    margin: 0;
+    padding: 0;
+  }
+  .cabeceras-secciones-interiores div.contenedor-img-cabecera {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #CCC;
+    border-left: 7px solid #CCC;
+    border: none;
+    width: 100%;
+    min-height: 120px;
+  }
+  .cabeceras-secciones-interiores div.contenedor-img-cabecera img {
+    height: 100%;
+    min-height: 120px;
+  }
+  .cabeceras-secciones-interiores div.contenedor-img-cabecera h2 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: .2em;
+  }
+  .bread-crumbs {
+    margin-top: 0px;
+  }
+  .bread-crumbs div.container-bread-crumbs ul li {
+    font-size: 10px;
+  }
+  .columna-utilidades h3 {
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+    padding-top: 1em;
+  }
+  .columna-utilidades div.documentacion {
+    margin-right: .2em;
+    margin-left: .2em;
+  }
+  .columna-utilidades div.productos-relacionados {
+    margin-left: 2px;
+    margin-top: 20px;
+    margin-right: 2px;
+  }
+  .columna-utilidades div.formacion {
+    margin-left: .2em;
+    margin-top: 20px;
+  }
+  .columna-utilidades div.formacion h5 {
+    font-family: 'aenor_fontana_ndbold';
+    font-size: 22px;
+    font-size: 2.2rem;
+    color: #474747;
+  }
+  .columna-utilidades div.formacion ul li {
+    width: 100%;
+    display: block;
+    min-height: 105px;
+  }
+  .columna-utilidades div.formacion ul li p {
+    display: block;
   }
 }
 .borde {
