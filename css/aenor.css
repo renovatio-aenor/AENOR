@@ -1021,6 +1021,16 @@ h3 {
   .columna-utilidades div.formacion ul li p {
     display: block;
   }
+  .contenido-paginas-interiores div.container-text-interiores h2 {
+    margin-left: .2em;
+  }
+  .contenido-paginas-interiores div.container-text-interiores h3 {
+    margin-left: .2em;
+  }
+  .contenido-paginas-interiores div.container-text-interiores p {
+    margin-left: .2em;
+    margin-right: .2em;
+  }
 }
 .borde {
   border: 1px solid #CCC;
