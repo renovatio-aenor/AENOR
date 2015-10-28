@@ -59,18 +59,88 @@ h1 {
   font-family: 'aenor_fontana_ndbold';
   font-size: 57px;
   font-size: 5.7rem;
-  line-height: 1em;
+  color: #585858;
 }
 h2 {
   font-family: 'aenor_fontana_ndbold';
   font-size: 42px;
   font-size: 4.2rem;
+  color: #585858;
 }
 h3 {
   font-family: 'aenor_fontana_ndbold';
   font-size: 36px;
   font-size: 3.6rem;
   color: #585858;
+}
+h4 {
+  font-family: 'aenor_fontana_ndbold';
+  font-size: 36px;
+  font-size: 3.6rem;
+  color: #585858;
+}
+h5 {
+  font-family: 'aenor_fontana_ndbold';
+  font-size: 30px;
+  font-size: 3rem;
+  color: #585858;
+}
+h6 {
+  font-family: 'aenor_fontana_ndbold';
+  font-size: 25px;
+  font-size: 2.5rem;
+  color: #585858;
+}
+p {
+  font-family: 'aenor_fontana_ndregular';
+  font-size: 1.8rem;
+}
+p strong {
+  font-family: 'aenor_fontana_ndbold';
+}
+ul {
+  font-family: 'aenor_fontana_ndregular';
+  font-size: 1.8rem;
+}
+ul.sin-espacio {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+label {
+  font-family: 'aenor_fontana_ndregular';
+  font-size: 1.8rem;
+}
+label strong {
+  font-family: 'aenor_fontana_ndbold';
+}
+button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+  background-color: #98bf11;
+  border-color: #98bf11;
+  font-family: 'aenor_fontana_ndregular';
+  font-size: 1.8rem;
 }
 .right {
   float: right;
