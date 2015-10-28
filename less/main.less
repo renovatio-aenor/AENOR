@@ -983,11 +983,23 @@ div
 	}
 
 
+	// img.img-fondo
+	// {
+	// 	width: 100%;
+	// }
+
+
 	div.carousel-caption
 	{
-		left: 20px;
+		left: 5%;
 		text-align: left;
 		bottom:40px;
+		background-color: rgba(255,255,255,0.6);
+		width: 371px;
+		min-height: 320px;
+
+		
+
 
 		h3
 		{
@@ -996,6 +1008,9 @@ div
 			color:#313131;
 			line-height: .8em;
 			text-shadow:none;
+
+			.reset();
+			padding-left: 20px;
 
 			span
 			{
@@ -1008,16 +1023,34 @@ div
 		p
 		{
 			font-family: 'aenor_fontana_ndregular';
-			.toem(1.4);
-			color:#313131;
-			line-height: 1em;
+			.toem(1.8);
+			color:#000;
+			line-height: 1.2em;
 			text-shadow:none;
+			padding-left: 20px;
+			margin-top: 10px;
 		}
+
+		p.suscribe
+		{
+			width: 100%;
+
+			text-align: center;
+			.reset();
+
+			button
+			{
+				width: 80%;
+			}
+
+		}
+
+
 	}
 
 	ol.carousel-indicators
 	{
-		left: 400px;
+		// left: 400px;
 		bottom:5px;
 
 
@@ -1279,4 +1312,409 @@ div
 		}
 	}
 
+}
+
+
+
+
+.listado-tienda
+{
+	.reset();
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	div.row
+	{
+		.reset();
+	}
+
+
+	ul.listado-items-tienda
+	{
+		.reset();
+		list-style: none;
+
+
+		li
+		{
+			float: left;
+			.reset();
+			margin-top: 30px;
+			max-width: 25%;
+
+
+
+			div.img
+			{
+				position: relative;
+
+
+				img.foto
+				{
+					border:1px solid #CCC;
+					border-left:7px solid #CCC;
+				}
+
+				div.social
+				{
+					position: absolute;
+					bottom: 12px;
+					left: 0;
+					background-color: #FFF;
+					width: 80%;
+					display:none;
+
+					p
+					{
+						
+						.reset();
+						padding-top: 5px;
+						text-align: center;
+					}
+
+					a
+					{
+						color:#484848;
+						.toem(2);
+
+					}
+				}
+
+
+				div.social-bt
+				{
+					position: absolute;
+					bottom: 10px;
+					right: 35px;
+				}
+
+
+
+
+				img.foto-fondo
+				{
+					border:1px solid #CCC;
+					border-left:7px solid #CCC;
+				}
+
+
+
+			}
+
+			div.img:hover
+			{
+				div.social
+				{
+					display:block;
+				}
+
+			}
+
+
+			p.titulo
+			{
+				font-family: 'aenor_fontana_ndbold';
+				.toem(2.4);
+				margin-top: 10px;
+				width: 95%;
+				line-height: 1.1em;
+			}
+
+			p.texto
+			{
+				font-family: 'aenor_fontana_ndregular';
+				.toem(1.5);
+				margin-top: 10px;
+				width: 95%;
+				line-height: 1.1em;
+
+				strong
+				{
+					font-family: 'aenor_fontana_ndbold';
+				}
+			}
+
+
+			p.precio
+			{
+				font-family: 'aenor_fontana_ndregular';
+				.toem(3);
+				color:#838383;
+				.reset();
+
+				i
+				{
+					.toem(2);
+				}
+			}
+
+			p.msg
+			{
+				.toem(1.2);
+				line-height: 1em;
+				width: 90%;
+				margin-left: 10%;
+			}
+
+			p.red
+			{
+				color:red;
+			}
+
+			div
+			{
+				.reset();
+			}
+
+			button.comprar
+			{
+				background-color: #FFF;
+				color:#f19800;
+				border:1px solid #f19800;
+				margin-top: 15px;
+
+			}
+
+			div.comprar
+			{
+				margin: 0 auto;
+				text-align: center;
+			}
+
+
+			
+
+
+		}
+	}
+}
+
+
+
+.ficha-producto-tienda
+{
+	button.descarga-pdf
+	{
+
+		width: 95%;
+		max-width: 300px;
+		background-color: #FFF;
+		border:1px solid #000;
+		color:#000;
+		margin-top: 15px;
+	}
+
+
+			p.precio
+			{
+				font-family: 'aenor_fontana_ndregular';
+				.toem(3);
+				color:#838383;
+				.reset();
+
+				i
+				{
+					.toem(2);
+				}
+			}
+
+			p.msg
+			{
+				.toem(1.2);
+				line-height: 1em;
+				width: 90%;
+				margin-left: 10%;
+			}
+
+			p.red
+			{
+				color:red;
+			}
+
+			div
+			{
+				.reset();
+			}
+
+			button.comprar
+			{
+				background-color: #FFF;
+				color:#f19800;
+				border:1px solid #f19800;
+				margin-top: 15px;
+
+			}
+
+			div.comprar
+			{
+				margin: 0 auto;
+				text-align: center;
+			}
+
+
+			div.botones-comprar
+			{
+				margin-top: 15px;
+			}
+
+
+ul.listado-items-tienda
+	{
+		.reset();
+		list-style: none;
+
+
+		li
+		{
+			float: left;
+			.reset();
+			margin-top: 30px;
+			max-width: 33%;
+
+
+
+			div.img
+			{
+				position: relative;
+
+
+				img.foto
+				{
+					border:1px solid #CCC;
+					border-left:7px solid #CCC;
+				}
+
+				div.social
+				{
+					position: absolute;
+					bottom: 12px;
+					left: 0;
+					background-color: #FFF;
+					width: 80%;
+					display:none;
+
+					p
+					{
+						
+						.reset();
+						padding-top: 5px;
+						text-align: center;
+					}
+
+					a
+					{
+						color:#484848;
+						.toem(2);
+
+					}
+				}
+
+
+				div.social-bt
+				{
+					position: absolute;
+					bottom: 10px;
+					right: 35px;
+				}
+
+
+
+
+				img.foto-fondo
+				{
+					border:1px solid #CCC;
+					border-left:7px solid #CCC;
+				}
+
+
+
+			}
+
+			div.img:hover
+			{
+				div.social
+				{
+					display:block;
+				}
+
+			}
+
+
+			p.titulo
+			{
+				font-family: 'aenor_fontana_ndbold';
+				.toem(2.4);
+				margin-top: 10px;
+				width: 95%;
+				line-height: 1.1em;
+			}
+
+			p.texto
+			{
+				font-family: 'aenor_fontana_ndregular';
+				.toem(1.5);
+				margin-top: 10px;
+				width: 95%;
+				line-height: 1.1em;
+
+				strong
+				{
+					font-family: 'aenor_fontana_ndbold';
+				}
+			}
+
+
+			p.precio
+			{
+				font-family: 'aenor_fontana_ndregular';
+				.toem(3);
+				color:#838383;
+				.reset();
+
+				i
+				{
+					.toem(2);
+				}
+			}
+
+			p.msg
+			{
+				.toem(1.2);
+				line-height: 1em;
+				width: 90%;
+				margin-left: 10%;
+			}
+
+			p.red
+			{
+				color:red;
+			}
+
+			div
+			{
+				.reset();
+			}
+
+			button.comprar
+			{
+				background-color: #FFF;
+				color:#f19800;
+				border:1px solid #f19800;
+				margin-top: 15px;
+
+			}
+
+			div.comprar
+			{
+				margin: 0 auto;
+				text-align: center;
+			}
+
+
+			
+
+
+		}
+	}
 }
